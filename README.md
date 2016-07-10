@@ -1,7 +1,8 @@
 # T25-443MHz-RFtemperature-sensor
-Arduino library for receiving temperature sent by commercial water pool
+Arduino library for receiving temperature sent by commercial
 temperature sensor T25 and compatible ones with inside bord TX1-3
 
+Data world
 R - random sensor ID 8b 0-255
 B - batery state 2b     
 C - channel number 2b   0-2 = 1-3
@@ -29,6 +30,11 @@ I = 500us
  | | | |                  | |  | |    | |        | |        | |
 _| |_| |__________________| |__| |____| |_......_| |________| |_
 
-Enjoy,
+Library SensorT25.h
 
+Library reading data from sensors T25 by channel 1,2 and 3. T25 don't have button for change channel, but inside are contacts next of button for change C/F.
+Data for sensors are stored in array and ispossible read it by get functions with channel number as parameter..
+
+Enjoy,
 Martin Mikala
+dev@miklik.cz
