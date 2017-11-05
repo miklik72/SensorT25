@@ -1,18 +1,14 @@
 {
-  "name": "SensorT25",
-  "keywords": "sensor, temperature, 433MHz, Sencor",
-  "description": "Arduino Library for Sencor wireless sensor T25",
-  "repository":
-  {
-    "type": "git",
-    "url": "https://github.com/miklik72/SensorT25.git"
-  },
-  "authors":
-  [
-    {
-      "name": "Martin Mikala",
-      "email": "dev@miklik.cz",
-      "maintainer": true
-    },
-  ],
+	"name": "SensorT25",
+	"keywords": "sensor, temperature, 433MHz, Sencor",
+	"description": "Arduino Library for Sencor wireless sensor T25",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/miklik72/SensorT25.git"
+	},
+	"authors": [{
+		"name": "Martin Mikala",
+		"email": "dev@miklik.cz",
+		"maintainer": true
+	}]
 }
