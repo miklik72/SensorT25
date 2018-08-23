@@ -123,7 +123,7 @@ int SensorT25::_idecodeTemp(unsigned long buffer)
 }
 
 // IRQ handler for decode bits ...
-void SensorT25::_irqHandler()
+void IRAM_ATTR SensorT25::_irqHandler()
 {
   unsigned long currentTime = micros();        // shot time
   int duration = currentTime - _lastTime;       // calculate duration
