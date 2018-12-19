@@ -127,8 +127,10 @@ int SensorT25::_idecodeTemp(unsigned long buffer)
 // IRQ handler for decode bits ...
 #ifdef ESP32
   void IRAM_ATTR SensorT25::_irqHandler()
+  #warning "sT25: ESP32 platform"
 #else
   void SensorT25::_irqHandler()
+  #warning "sT25: other platform"
 #endif
 {
   unsigned long currentTime = micros();        // shot time
