@@ -18,6 +18,7 @@ v0.4.1 - rename BIT0 and 1 to TBIT0 and 1, user IRAM_ATTR for IRQ handler
 v0.4.2 - ESP32 is not supporting float in IRQ handler, use int instead
 v1.1.0 - sync version with git releases
 v1.1.2 - add again IRAM_ATTR for _irqHandler function
+v1.1.3 - add condition for ESP32 and other platforms for IRAM_ATTR
 */
 
 #include <SensorT25.h>
@@ -124,7 +125,11 @@ int SensorT25::_idecodeTemp(unsigned long buffer)
 }
 
 // IRQ handler for decode bits ...
-void IRAM_ATTR SensorT25::_irqHandler()
+#ifdef ESP32
+  void IRAM_ATTR SensorT25::_irqHandler()
+#else
+  void SensorT25::_irqHandler()
+#endif
 {
   unsigned long currentTime = micros();        // shot time
   int duration = currentTime - _lastTime;       // calculate duration
