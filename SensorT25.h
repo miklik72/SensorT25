@@ -18,6 +18,7 @@ v0.4.1 - rename BIT0 and 1 to TBIT0 and 1, user IRAM_ATTR for IRQ handler
 v0.4.2 - ESP32 is not supporting float in IRQ handler, use int for array
 v0.4.2 - treshold 100 for impuls
 v1.1.0 - sync version with git releases
+v1.1.4 - 17.12.2019, set limit for valid temperature to 30C
 */
 
 #ifndef SensorT25_h

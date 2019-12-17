@@ -19,6 +19,7 @@ v0.4.2 - ESP32 is not supporting float in IRQ handler, use int instead
 v1.1.0 - sync version with git releases
 v1.1.2 - add again IRAM_ATTR for _irqHandler function
 v1.1.3 - add condition for ESP32 and other platforms for IRAM_ATTR
+v1.1.4 - 17.12.2019, set limit for valid temperature to 30C
 */
 
 #include <SensorT25.h>
@@ -183,6 +184,7 @@ int SensorT25::_idecodeTemp(unsigned long buffer)
   _valid[ch] = true;                                 // set data valid
   _sid[ch] = (_decodeSID(_buffer[0])); //sensor ID        // save sensor ID
   _itemperature[ch] = (_idecodeTemp(_buffer[0]));           // save temperature
+  if (_itemperature[ch] > 300) {_valid[ch] = false};        // invalid value larger then 30C
   _time[ch] = millis();                              //save data timestamp
   _resetTWord ();                                    // reset reading
   }
